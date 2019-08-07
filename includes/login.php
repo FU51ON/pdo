@@ -38,4 +38,6 @@
         <button type="submit" name="login">Login</button>
     </form>
     <a href="../index.php">homepage</a>
+    </br>
+    <a href="register.php">register</a>
 </div>
