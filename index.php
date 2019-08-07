@@ -1,6 +1,5 @@
 <?php
     include "includes/dbh.php";
-    /*echo password_hash("rasmuslerdorf", PASSWORD_DEFAULT);*/
 ?>
 <!DOCTYPE html>
 <html lang="en">
