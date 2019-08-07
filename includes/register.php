@@ -1,52 +1,29 @@
 <?php
-
-    include "dbh.php";
-    /*password_hash("rasmuslerdorf", PASSWORD_DEFAULT);*/
-
-    if (isset($_POST['register'])) {
-        try {
-            $STH = $conn->prepare("INSERT INTO user (firstName,lastName,email,pwd) VALUES (:firstName, :lastName, :email, :pwd)");
-
-            $firstName = $_POST['firstName'];
-            $lastName = $_POST['lastName'];
-            $email = $_POST['email'];
-            $pwd = $_POST['pwd'];
-            $hashed_pwd = password_hash($pwd, PASSWORD_DEFAULT);
-
-
-            $STH->bindParam(':firstName', $firstName);
-            $STH->bindParam(':lastName', $lastName);
-            $STH->bindParam(':email', $email);
-            $STH->bindParam(':pwd', $hashed_pwd);
-
-            $STH->execute();
-            echo "yeet";
-
-        } catch (PDOException $e) {
-            echo $e->getMessage();
-        }
-    }
+include $_SERVER['DOCUMENT_ROOT'] . "/srv/pdo/includes/header.php";
 ?>
-<div>
-    <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
-        <label for="firstName">First Name:</label>
-        <input type="text" name="firstName" required>
+<div class="wrapper grad">
+    <div>
+        <form action="register_handler.php" method="POST">
+            <label for="firstName">First Name:</label>
+            <input type="text" name="firstName" required>
 
-        <label for="lastName">Last Name:</label>
-        <input type="text" name="lastName" required>
+            <label for="lastName">Last Name:</label>
+            <input type="text" name="lastName" required>
 
-        <label for="email">Email:</label>
-        <input type="text" name="email" required>
+            <label for="email">Email:</label>
+            <input type="text" name="email" required>
 
-        <label for="pwd">Password:</label>
-        <input type="password" name="pwd" required>
+            <label for="pwd">Password:</label>
+            <input type="password" name="pwd" required>
 
-        <button type="submit" name="register">Register</button>
-    </form>
+            <button type="submit" name="register">Register</button>
+        </form>
+    </div>
 </div>
-<a href="../index.php">homepage</a>
-
-<?php
-    #close connection
-    $conn = null;
-?>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/multiple.js/0.0.1/multiple.min.js" integrity="sha256-4+vj4FcENMARxlfF1mJhD1UoK8TQDUKRoFtJO+Z0TIU=" crossorigin="anonymous"></script>
+  <script>
+    var multiple = new Multiple({
+      selector: '.grad',
+      background: 'linear-gradient(to bottom, #0072ff, #00c6ff)'
+    });
+  </script>

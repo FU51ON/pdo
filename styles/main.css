@@ -1,1 +1,20 @@
-styles here
+header {
+  background-color: grey;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+/*
+.grad {
+  background: #00c6ff; 
+background: -webkit-linear-gradient(to bottom, #0072ff, #00c6ff);
+background: linear-gradient(to bottom, #0072ff, #00c6ff);
+
+}*/
+ .wrapper {
+   
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+ }
