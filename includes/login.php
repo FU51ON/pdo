@@ -17,7 +17,7 @@
             }
 
             if ($query->rowCount() > 0 && password_verify($_POST['pwd'], $pwd_db) ) {
-                echo "welcome ". $result['firstName'];
+                echo "welcome ". $name_db;
             }else {
                 echo "error somewhere";
             }
