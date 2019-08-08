@@ -18,3 +18,9 @@ background: linear-gradient(to bottom, #0072ff, #00c6ff);
   margin: 0;
   padding: 0;
  }
+ul {
+  margin: 0;
+}
+.main-nav {
+  float: right;
+}

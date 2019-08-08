@@ -10,7 +10,6 @@ include "dbh.php";
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="/srv/pdo/styles/main.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/multiple.js/0.0.1/multiple.min.css" />
-  <title>Document</title>
 </head>
 
 <body>
@@ -20,9 +19,16 @@ include "dbh.php";
         <span>Logo Here</span>
       </a>
     </div>
-    <div class="main-nav"></div>
-    <a href="/srv/pdo/includes/register.php">Register</a><br>
-    <a href="/srv/pdo/includes/login.php">Login</a>
+    <div class="main-nav">
+      <ul>
+        <li>
+          <a href="/srv/pdo/includes/login.php">Login</a>
+        </li>
+        <li>
+          <a href="/srv/pdo/includes/register.php">Register</a>
+        </li>
+      </ul>
+    </div>
   </header>
 </body>
 
