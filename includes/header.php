@@ -31,12 +31,12 @@ include "dbh.php";
       <li class="main-nav">
         <div>
           <ul>
-            <a href="/srv/pdo/includes/login.php">
-              <li>Login</li>
-            </a>
-            <a href="/srv/pdo/includes/register.php">
-              <li>Register</li>
-            </a>
+            <?php if(!isset($_SESSION['user'])): ?>
+            <a href="/srv/pdo/includes/login.php"><li>Login</li></a>
+            <a href="/srv/pdo/includes/register.php"><li>Register</li></a>
+            <?php else: ?>
+              <a href="/srv/pdo/includes/logout.php"><li>Logout</li></a>
+            <?php endif; ?>
           </ul>
         </div>
       </li>

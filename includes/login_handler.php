@@ -18,6 +18,7 @@
 
             if ($query->rowCount() > 0 && password_verify($_POST['pwd'], $pwd_db) ) {
                 $_SESSION['user']=$name_db;
+                exit(header("Location: ../index.php?message=welcome"));
             }else {
                 echo "error somewhere";
             }
