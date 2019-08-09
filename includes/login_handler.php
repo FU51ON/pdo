@@ -17,7 +17,7 @@
             }
 
             if ($query->rowCount() > 0 && password_verify($_POST['pwd'], $pwd_db) ) {
-                echo "welcome ". $name_db;
+                $_SESSION['user']=$name_db;
             }else {
                 echo "error somewhere";
             }

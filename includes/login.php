@@ -3,8 +3,8 @@
 include $_SERVER['DOCUMENT_ROOT'] . "/srv/pdo/includes/header.php";
 ?>
 <div class="wrapper grad">
-  <div>
-    <form action="login.php" method="POST">
+  <div class="form">
+    <form action="login_handler.php" method="POST">
       <label for="email">Email :</label>
       <input type="text" name="email">
 
