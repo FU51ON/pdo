@@ -1,10 +1,12 @@
-header {
-  background-color: grey;
+* {
+  font-family: 'Montserrat', sans-serif;
 }
+
 body {
   margin: 0;
   padding: 0;
 }
+
 /*
 .grad {
   background: #00c6ff; 
@@ -12,15 +14,71 @@ background: -webkit-linear-gradient(to bottom, #0072ff, #00c6ff);
 background: linear-gradient(to bottom, #0072ff, #00c6ff);
 
 }*/
- .wrapper {
-   
+.wrapper {
+
   height: 100vh;
   margin: 0;
   padding: 0;
- }
+}
+
 ul {
   margin: 0;
 }
+
+ul li {
+  list-style-type: none;
+  display: inline-block;
+}
+
 .main-nav {
   float: right;
+}
+
+header {
+  margin: 0px auto;
+}
+
+header a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1em;
+}
+
+.header {
+  width: 60%;
+  margin: 0px auto;
+  padding: 15px 0px;
+}
+
+.main-nav ul li {
+  padding: 7px 15px;
+  border: 1.5px #ccc solid;
+  border-radius: 5px;
+  background-color: #0073FF;
+  color: white;
+
+  -webkit-transition-duration: 0.4s;
+  /* Safari */
+  transition-duration: 0.7s;
+  cursor: pointer;
+}
+
+.main-nav ul li:hover {
+  background-color: white;
+  color: black;
+  border-color: black;
+}
+
+.logo a span {
+  font-size: 1.5em;
+}
+
+.txt-bold {
+  font-family: 'Yatra One', cursive;
+  font-weight: 900;
+}
+
+.msg {
+  margin: 0px auto;
+  width: 50%;
 }

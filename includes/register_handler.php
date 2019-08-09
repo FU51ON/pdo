@@ -18,9 +18,17 @@
             $STH->bindParam(':lastName', $lastName);
             $STH->bindParam(':email', $email);
             $STH->bindParam(':pwd', $hashed_pwd);
+            
+            if ($firstName != '' && $lastName != '' && $email != '' && $pwd != '') {
+                $STH->execute();
+                echo "registered successfully!";
+            } else {
+                header("Location: register.php?message=error");
+                echo "All fields are required!";
+            }
 
-            $STH->execute();
-            echo "yeet";
+            /*$STH->execute();
+            echo "yeet";*/
 
         } catch (PDOException $e) {
             echo $e->getMessage();
