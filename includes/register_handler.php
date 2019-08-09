@@ -19,12 +19,21 @@
             $STH->bindParam(':email', $email);
             $STH->bindParam(':pwd', $hashed_pwd);
             
-            if ($firstName != '' && $lastName != '' && $email != '' && $pwd != '') {
+            /*if ($firstName != '' && $lastName != '' && $email != '' && $pwd != '') {
                 $STH->execute();
                 echo "registered successfully!";
             } else {
                 header("Location: register.php?message=error");
                 echo "All fields are required!";
+            }*/
+            if(empty($firstName) || empty($lastName) || empty($email) || empty($pwd)){
+                exit(header("Location: register.php?message=empty"));
+            }else if (!preg_match("/^[a-zA-Z']+$/", $firstName)) {
+                exit(header("Location: register.php?message=firstname"));
+            }else if (!preg_match("/^[a-zA-Z']+$/", $lastName)) {
+                exit(header("Location: register.php?message=lastname"));
+            }else if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                exit(header("Location: register.php?message=email"));
             }
 
             /*$STH->execute();
@@ -36,4 +45,3 @@
     }
     #close connection
     $conn = null;
-?>

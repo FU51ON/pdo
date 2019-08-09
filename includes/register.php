@@ -3,14 +3,6 @@
 include $_SERVER['DOCUMENT_ROOT'] . "/srv/pdo/includes/header.php";
 ?>
 <div class="wrapper grad">
-    <div class="msg alert alert-warning">
-        <?php
-            if (!empty($_GET['message'])) {
-                $message = $_GET['message'];
-                echo "Note: ".$message;
-            }
-        ?>
-    </div>
     <div>
         <form action="register_handler.php" method="POST">
             <label for="firstName">First Name:</label>
