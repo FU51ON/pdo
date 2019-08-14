@@ -42,6 +42,13 @@ include "dbh.php";
       </li>
     </ul>
   </header>
+  <?php 
+    if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 24*60*60)) {
+      session_unset();
+      session_destroy();
+    }
+    $_SESSION['LAST_ACTIVITY'] = time();
+  ?>
 </body>
 
 </html>
